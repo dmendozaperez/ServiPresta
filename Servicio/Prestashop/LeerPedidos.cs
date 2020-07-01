@@ -224,8 +224,8 @@ namespace Servicio
                             {
                                 Order_Dtl dtl = new Order_Dtl();
                                 string articulo_talla = key_det.det_artic_ref.ToString().Trim().Replace("-", "");
-                                string articulo = articulo_talla.Substring(0, articulo_talla.Length - 2);
-                                string talla = articulo_talla.Substring(articulo_talla.Length - 2, 2);
+                                string articulo = articulo_talla.Substring(0,7);
+                                string talla = articulo_talla.Substring(7, articulo_talla.Length - 7);
 
                                 dtl._code = articulo;
                                 dtl._size = talla;

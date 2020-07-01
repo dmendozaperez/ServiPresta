@@ -29,5 +29,15 @@ namespace ProyPrueba
             tw.WriteLine("Fin del Proceso." + DateTime.Now.ToString());
             tw.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string path = ConfigurationManager.ConnectionStrings["CarpetaLog"].ConnectionString;
+            TextWriter tw = new StreamWriter(path, true);
+            tw.WriteLine("Inicio del Proceso." + DateTime.Now.ToString());
+            LeerPedidos.ImportaDataPrestaShop(tw);
+            tw.WriteLine("Fin del Proceso." + DateTime.Now.ToString());
+            tw.Close();
+        }
     }
 }
